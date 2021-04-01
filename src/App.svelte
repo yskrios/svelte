@@ -1,17 +1,29 @@
 <script>
   export let name;
   export let lastname;
+  let svelteLogo = " https://arepa.s3.amazonaws.com/svelte-logo.png";
 </script>
 
 <main>
   <h1>Hello {name} {lastname}!</h1>
-  <p>
-    Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn
-    how to build Svelte apps.
-  </p>
+  <p>Frontend Developer</p>
+  <img src={svelteLogo} alt="Logo de svelte" />
 </main>
 
 <style>
+  :global(body) {
+    background-color: #f2f2f2;
+    color: #333;
+  }
+
+  :global(:root) {
+    --theme-color: purple;
+  }
+
+  p {
+    color: var(--theme-color);
+    font-size: 16px;
+  }
   main {
     text-align: center;
     padding: 1em;
